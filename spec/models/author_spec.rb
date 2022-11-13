@@ -12,4 +12,12 @@ RSpec.describe "The Author model", type: :model do
         expect(author.name).to eq("Alan Turing")
         expect(author.homepage).to eq("http://wikipedia.org/Alan_Turing")
     end
+
+    it "is not created without a last name" do
+        author = Author.new(
+            first_name: "Alan",
+            homepage: "http://wikipedia.org/Alan_Turing"
+        )
+        expect(author).to_not be_valid
+    end
   end
