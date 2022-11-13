@@ -51,4 +51,13 @@ RSpec.describe "The Author model", type: :model do
         )
         expect(author).to_not be_valid
     end
+
+    it "has an empty list of papers" do
+        author = Author.new(
+            first_name: "Alan",
+            last_name: "Turing",
+            homepage: "http://wikipedia.org/Alan_Turing"
+        )
+        expect(author.papers).to be_empty
+    end
   end
