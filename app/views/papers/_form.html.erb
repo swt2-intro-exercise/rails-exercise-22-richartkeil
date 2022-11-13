@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <%= form.label :author_ids, style: "display: block" %>
+    <%= form.collection_select :author_ids, Author.all, :id, :name, {}, multiple: true, size: 5 %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
